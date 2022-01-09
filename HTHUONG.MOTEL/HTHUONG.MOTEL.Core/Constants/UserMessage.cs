@@ -42,35 +42,5 @@ namespace HTHUONG.MOTEL.Core.Constants
         /// Dữ liệu đẩy lên không hợp lệ
         /// </summary>
         public static string INVALID_MODEL = "Dữ liệu truyền lên không hợp lệ.";
-
-        /// <summary>
-        /// Lỗi gửi mail
-        /// </summary>
-        public const string SEND_MAIL_EXCEPTION = "Lỗi khi gửi mail.";
-
-        /// <summary>
-        /// Định dạng file không hợp lệ
-        /// </summary>
-        public static string INVALID_FILE_FORMAT = "Định dạng file không hợp lệ.";
-
-        /// <summary>
-        /// Dung lượng > Max size
-        /// </summary>
-        public const string ERROR_SIZE_FILE_TOO_MAX = "Dung lượng vượt quá giới hạn cho phép.";
-
-        /// <summary>
-        /// File rỗng
-        /// </summary>
-        public const string ERROR_FILE_EMPTY = "File rỗng.";
-
-        /// <summary>
-        /// Dung lượng file lớn hơn 10MB
-        /// </summary>
-        public const string SIZE_FILE_TOO_MAX = "Dung lượng file lớn hơn 10MB.";
-
-        /// <summary>
-        /// Lỗi khi cố tình muốn đẩy ảnh/file/thư mục vào làm con của 1 ảnh khác
-        /// </summary>
-        public const string IMAGE_CANNOT_BECOME_PARENT = "Một ảnh không thể trở thành cha của ảnh/file/thư mục khác.";
     }
 }
