@@ -22,5 +22,39 @@
         height: calc(100% - 66px);
         padding: 12px;
 
+        &_table {
+            // border-top: 1px solid #96a6d8;
+            // margin-top: 24px;
+            padding: 12px;
+            height: calc(100% - 60px);
+            overflow: auto;
+
+            .row {
+                display: flex;
+                //
+            }
+
+            .header {
+                height: 40px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .row_room {
+                width: 50%;
+            }
+
+            .row_customer {
+                width: 30%;
+                min-width: 250px;
+            }
+
+            .row_action {
+                width: 20%;
+                min-width: 200px;
+            }
+        }
+
+
     }
 }

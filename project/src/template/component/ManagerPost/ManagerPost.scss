@@ -20,6 +20,52 @@
         width: 100%;
         height: calc(100% - 66px);
         padding: 12px;
+        overflow: auto;
+
+        &_table {
+            border-top: 1px solid #96a6d8;
+            margin-top: 24px;
+            padding: 12px;
+            height: calc(100% - 60px);
+            overflow: auto;
+
+            .row {
+                display: flex;
+                //
+            }
+
+            .header {
+                height: 40px;
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .row_image {
+                width: 20%;
+                max-width: 200px;
+                padding-right: 24px;
+
+            }
+
+            .row_inf {
+                width: calc(35% - 50px)
+            }
+
+            .row_status {
+                width: 15%;
+                min-width: 150px;
+            }
+
+            .row_edit {
+                width: 50px
+            }
+
+            .row_content {
+                width: 30%;
+            }
+
+        }
+
     }
 
 }

@@ -16,10 +16,10 @@ import ListMotel from '../component/listMotel/ListMotel'
 import ManagerCustomer from '../component/ManagerCustomer/ManagerCustomer'
 import ManagerInvoice from '../component/ManagerInvoice/ManagerInvoice '
 import ManagerPost from '../component/ManagerPost/ManagerPost'
-import ManagerRental from '../component/ManagerRental/ManagerRental'
 import ManagerRoom from '../component/ManagerRoom/ManagerRoom'
 import MyMotel from '../component/myMotel/MyMotel'
 import Revenue from '../component/Revenue/Revenue'
+import Invoice from '../component/Invoice/Invoice'
 
 const MENU_INDEX = {
   HOME: 1,
@@ -29,7 +29,8 @@ const MENU_INDEX = {
   MANAGEMENT_RENTAL: 5,
   CUSTOMER: 6,
   MANAGEMENT_INVOICE: 7,
-  REVENUE: 8
+  REVENUE: 8,
+  INVOICE: 9
 }
 
 function HomePage () {
@@ -46,7 +47,7 @@ function HomePage () {
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.HOME ? 'select-menu' : '')
+              (index === MENU_INDEX.HOME ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.HOME)
@@ -58,7 +59,7 @@ function HomePage () {
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.MY_ROOM ? 'select-menu' : '')
+              (index === MENU_INDEX.MY_ROOM ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.MY_ROOM)
@@ -70,7 +71,19 @@ function HomePage () {
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.MANAGEMENT_ROOM ? 'select-menu' : '')
+              (index === MENU_INDEX.INVOICE ? 'select-menu' : '')
+            }
+            onClick={() => {
+              setIndex(MENU_INDEX.INVOICE)
+            }}
+          >
+            <img src={IconInvoice} alt='iconHome'></img>
+            <span>Hóa đơn</span>
+          </div>
+          <div
+            className={
+              'motel-homePage__body_menu_item ' +
+              (index === MENU_INDEX.MANAGEMENT_ROOM ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.MANAGEMENT_ROOM)
@@ -82,7 +95,7 @@ function HomePage () {
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.MANAGEMENT_POST ? 'select-menu' : '')
+              (index === MENU_INDEX.MANAGEMENT_POST ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.MANAGEMENT_POST)
@@ -94,19 +107,7 @@ function HomePage () {
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.MANAGEMENT_RENTAL ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.MANAGEMENT_RENTAL)
-            }}
-          >
-            <img src={IconRent} alt='iconHome'></img>
-            <span>Quản lý thuê phòng</span>
-          </div>
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.CUSTOMER ? 'select-menu' : '')
+              (index === MENU_INDEX.CUSTOMER ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.CUSTOMER)
@@ -117,13 +118,13 @@ function HomePage () {
               alt='iconHome'
               style={{ borderRadius: '50%' }}
             ></img>
-            <span>Gửi/nhận khách trọ</span>
+            <span>Nhận khách trọ</span>
           </div>
 
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.MANAGEMENT_INVOICE ? 'select-menu' : '')
+              (index === MENU_INDEX.MANAGEMENT_INVOICE ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.MANAGEMENT_INVOICE)
@@ -136,7 +137,7 @@ function HomePage () {
           <div
             className={
               'motel-homePage__body_menu_item ' +
-              (index == MENU_INDEX.REVENUE ? 'select-menu' : '')
+              (index === MENU_INDEX.REVENUE ? 'select-menu' : '')
             }
             onClick={() => {
               setIndex(MENU_INDEX.REVENUE)
@@ -147,34 +148,31 @@ function HomePage () {
           </div>
         </div>
         <div className='motel-homePage__body_content'>
-          {index == MENU_INDEX.HOME ? <ListMotel></ListMotel> : <></>}
-          {index == MENU_INDEX.CUSTOMER ? (
+          {index === MENU_INDEX.HOME ? <ListMotel></ListMotel> : <></>}
+          {index === MENU_INDEX.CUSTOMER ? (
             <ManagerCustomer></ManagerCustomer>
           ) : (
             <></>
           )}
-          {index == MENU_INDEX.MANAGEMENT_INVOICE ? (
+          {index === MENU_INDEX.MANAGEMENT_INVOICE ? (
             <ManagerInvoice></ManagerInvoice>
           ) : (
             <></>
           )}
-          {index == MENU_INDEX.MANAGEMENT_POST ? (
+          {index === MENU_INDEX.MANAGEMENT_POST ? (
             <ManagerPost></ManagerPost>
           ) : (
             <></>
           )}
-          {index == MENU_INDEX.MANAGEMENT_RENTAL ? (
-            <ManagerRental></ManagerRental>
-          ) : (
-            <></>
-          )}
-          {index == MENU_INDEX.MANAGEMENT_ROOM ? (
+
+          {index === MENU_INDEX.MANAGEMENT_ROOM ? (
             <ManagerRoom></ManagerRoom>
           ) : (
             <></>
           )}
-          {index == MENU_INDEX.MY_ROOM ? <MyMotel></MyMotel> : <></>}
-          {index == MENU_INDEX.REVENUE ? <Revenue></Revenue> : <></>}
+          {index === MENU_INDEX.MY_ROOM ? <MyMotel></MyMotel> : <></>}
+          {index === MENU_INDEX.REVENUE ? <Revenue></Revenue> : <></>}
+          {index === MENU_INDEX.INVOICE ? <Invoice></Invoice> : <></>}
         </div>
       </div>
     </div>

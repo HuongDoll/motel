@@ -24,7 +24,7 @@ function MyMotel () {
             <Option value='0'>Tất cả</Option>
             <Option value='1'>Đang thuê</Option>
             <Option value='2'>Đã thuê</Option>
-            <Option value='3e'>Đang chờ xử lý yêu cầu thuê</Option>
+            <Option value='3'>Đang chờ xử lý yêu cầu thuê</Option>
           </Select>
         </div>
         <div className='motel-mymotel__content_table'>

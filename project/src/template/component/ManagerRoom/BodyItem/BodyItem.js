@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import image from './../../../../styles/Image/image.jpg'
+import { EditOutlined, DeleteTwoTone } from '@ant-design/icons'
 
 import { Button } from 'antd'
 
@@ -25,7 +26,11 @@ function BodyItem () {
       </div>
       <div className='row_status '>Còn trống</div>
       <div className='row_option '>
-        <Button>Trả phòng</Button>
+        <Button icon={<EditOutlined />} type='text'></Button>
+        <Button
+          icon={<DeleteTwoTone twoToneColor='red' />}
+          type='text'
+        ></Button>
       </div>
     </div>
   )

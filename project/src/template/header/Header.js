@@ -12,7 +12,7 @@ function Header () {
   const [modalRes, setModalRes] = useState(false)
 
   const onClick = ({ key }) => {
-    if (key == '2') setIsLogin(false)
+    if (key === '2') setIsLogin(false)
   }
 
   const menu = (
