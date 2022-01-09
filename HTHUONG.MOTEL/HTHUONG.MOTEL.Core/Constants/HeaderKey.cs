@@ -9,11 +9,6 @@ namespace HTHUONG.MOTEL.Core.Constants
     public static class HeaderKey
     {
         /// <summary>
-        /// ID của công ty
-        /// </summary>
-        public const string COMPANY_ID = "x-company-id";
-
-        /// <summary>
         /// Họ tên người dùng
         /// </summary>
         public const string FULL_NAME = "x-full-name";

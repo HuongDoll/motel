@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5lgqa5jY5HtM3kgAmEtC4yiUU7S+OdNZqBmJmgFY2zPvEKDnj3IegJzc7+aeWz8GlEXrzUAMSyEDr0htb4bW7A==",
+  "dgSpecHash": "6SX/nZMsD33s0kkhcmeDKb2qUUCBIWMi5qO4PshwneLbCyYs2U5zMfUts6+ETKqj/yWzurJE42mm3ceiB4Gc2g==",
   "success": true,
-  "projectFilePath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj",
+  "projectFilePath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",

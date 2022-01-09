@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LnN7gJT4+LuMFnVAJaZXGhEM1lMJjdvGx2kSkZCCdcdaEwDo5Z5OJ1oI/6iwHsDUJR07I9nYvbKIwmNCrpuoCQ==",
+  "dgSpecHash": "Zqx0fm1wbu12ZSI+lYW9cTpM0oyA/yau8hp3+LTkd2rA96n7MXFa/woK0cq1TLc27gO9PNBJNmlMNVMbUS9+mg==",
   "success": true,
-  "projectFilePath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
+  "projectFilePath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\awssdk.core\\3.7.5.12\\awssdk.core.3.7.5.12.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",

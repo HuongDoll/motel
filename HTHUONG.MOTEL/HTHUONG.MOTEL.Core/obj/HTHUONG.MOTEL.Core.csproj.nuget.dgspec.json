@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj": {}
+    "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj": {}
   },
   "projects": {
-    "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj": {
+    "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
+        "projectUniqueName": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
         "projectName": "HTHUONG.MOTEL.Core",
-        "projectPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
+        "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\obj\\",
+        "outputPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
-                "projectPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj"
+              "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
+                "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
+    "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj",
+        "projectUniqueName": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj",
         "projectName": "HTHUONG.MOTEL.Infrastructure",
-        "projectPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj",
+        "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\obj\\",
+        "outputPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",

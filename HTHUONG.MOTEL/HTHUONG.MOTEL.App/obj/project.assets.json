@@ -6870,11 +6870,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.App\\HTHUONG.MOTEL.App.csproj",
+      "projectUniqueName": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.App\\HTHUONG.MOTEL.App.csproj",
       "projectName": "HTHUONG.MOTEL.App",
-      "projectPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.App\\HTHUONG.MOTEL.App.csproj",
+      "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.App\\HTHUONG.MOTEL.App.csproj",
       "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-      "outputPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.App\\obj\\",
+      "outputPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6891,11 +6891,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj": {
-              "projectPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj"
+            "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj": {
+              "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj"
             },
-            "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
-              "projectPath": "D:\\motel_HTHUONG\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj"
+            "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
+              "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj"
             }
           }
         }

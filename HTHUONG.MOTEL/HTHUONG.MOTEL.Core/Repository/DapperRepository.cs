@@ -229,7 +229,7 @@ namespace HTHUONG.MOTEL.Core.Repository
                     //Nếu có IsDeleted thì truyền thêm IsDeleted
                     if (isDeleted != null)
                     {
-                        sql.Append($"AND IsDeleted={isDeleted} ");
+                        sql.Append($" (IsDeleted={isDeleted}) ");
                     }
                     if (filters.Count > 0)
                     {
@@ -450,7 +450,7 @@ namespace HTHUONG.MOTEL.Core.Repository
 
                 if (isDeleted != null)
                 {
-                    sql.Append($"AND IsDeleted={isDeleted} ");
+                    sql.Append($" (IsDeleted={isDeleted}) ");
                 }
                 if (filters.Count > 0)
                 {
