@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import logo from './../../styles/Image/logo_cut.png'
+import logo from './../../styles/Image/logo.png'
 import avt from './../../styles/Image/avt.png'
 import { Menu, Dropdown, message, Input, EyeTwoTone } from 'antd'
 import { Modal, Button, notification, Radio } from 'antd'
@@ -40,7 +40,11 @@ function Header () {
 
   return (
     <div className='motel-header'>
-      <img className='motel-header__left' src={logo} alt='Logo'></img>
+      <div className='motel-header__left'>
+        <img src={logo} alt='Logo'></img>
+        <div> Thuê trọ</div>
+      </div>
+
       <div className='motel-header__right'>
         {isLogin ? (
           <>

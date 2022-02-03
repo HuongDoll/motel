@@ -20,6 +20,15 @@ import ManagerRoom from '../component/ManagerRoom/ManagerRoom'
 import MyMotel from '../component/myMotel/MyMotel'
 import Revenue from '../component/Revenue/Revenue'
 import Invoice from '../component/Invoice/Invoice'
+import {
+  HomeOutlined,
+  GroupOutlined,
+  SnippetsOutlined,
+  WalletOutlined,
+  FormOutlined,
+  SolutionOutlined,
+  AreaChartOutlined
+} from '@ant-design/icons'
 
 const MENU_INDEX = {
   HOME: 1,
@@ -37,10 +46,7 @@ function HomePage () {
   const [index, setIndex] = useState(MENU_INDEX.HOME)
 
   return (
-    <div
-      className='motel-homePage'
-      style={{ backgroundImage: `url(${background})` }}
-    >
+    <div className='motel-homePage'>
       <Header></Header>
       <div className='motel-homePage__body'>
         <div className='motel-homePage__body_menu'>
@@ -53,7 +59,14 @@ function HomePage () {
               setIndex(MENU_INDEX.HOME)
             }}
           >
-            <img src={IconHome} alt='iconHome'></img>
+            <HomeOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.HOME ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Trang chủ</span>
           </div>
           <div
@@ -65,7 +78,14 @@ function HomePage () {
               setIndex(MENU_INDEX.MY_ROOM)
             }}
           >
-            <img src={IconRoom} alt='iconHome'></img>
+            <GroupOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.MY_ROOM ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Phòng của tôi</span>
           </div>
           <div
@@ -77,7 +97,14 @@ function HomePage () {
               setIndex(MENU_INDEX.INVOICE)
             }}
           >
-            <img src={IconInvoice} alt='iconHome'></img>
+            <SnippetsOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.INVOICE ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Hóa đơn</span>
           </div>
           <div
@@ -89,7 +116,14 @@ function HomePage () {
               setIndex(MENU_INDEX.MANAGEMENT_ROOM)
             }}
           >
-            <img src={IconManagerRoom} alt='iconHome'></img>
+            <WalletOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.MANAGEMENT_ROOM ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Quản lý phòng trọ</span>
           </div>
           <div
@@ -101,7 +135,14 @@ function HomePage () {
               setIndex(MENU_INDEX.MANAGEMENT_POST)
             }}
           >
-            <img src={IconPost} alt='iconHome'></img>
+            <FormOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.MANAGEMENT_POST ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Quản lý bài đăng</span>
           </div>
           <div
@@ -113,11 +154,14 @@ function HomePage () {
               setIndex(MENU_INDEX.CUSTOMER)
             }}
           >
-            <img
-              src={IconCustomer}
-              alt='iconHome'
-              style={{ borderRadius: '50%' }}
-            ></img>
+            <SolutionOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.CUSTOMER ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Nhận khách trọ</span>
           </div>
 
@@ -130,7 +174,15 @@ function HomePage () {
               setIndex(MENU_INDEX.MANAGEMENT_INVOICE)
             }}
           >
-            <img src={IconInvoice} alt='iconHome'></img>
+            <SnippetsOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color:
+                  index === MENU_INDEX.MANAGEMENT_INVOICE ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Quản lý hóa đơn</span>
           </div>
 
@@ -143,7 +195,14 @@ function HomePage () {
               setIndex(MENU_INDEX.REVENUE)
             }}
           >
-            <img src={IconRevenue} alt='iconHome'></img>
+            <AreaChartOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.REVENUE ? '#2a85da' : '#fff'
+              }}
+            />
+
             <span>Thống kê doanh thu</span>
           </div>
         </div>

@@ -1,14 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import image from './../../../../styles/Image/image.jpg'
 import { EditOutlined } from '@ant-design/icons'
+import PropTypes from 'prop-types'
 
 import { Button } from 'antd'
 
 import './BodyItem.scss'
+BodyItem.propTypes = {
+  onClickItem: PropTypes.func
+}
 
-function BodyItem () {
+BodyItem.defaultProps = {
+  onClickItem: () => {}
+}
+
+function BodyItem (props) {
   return (
-    <div className='motel-post-body-item row '>
+    <div
+      className='motel-post-body-item row '
+      onClick={() => {
+        props.onClickItem()
+      }}
+    >
       <img className='row_image' src={image}></img>
 
       <div className='row_inf '>

@@ -1,13 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import image from './../../../../styles/Image/image.jpg'
+import PropTypes from 'prop-types'
 
 import { Button } from 'antd'
 
 import './BodyItem.scss'
 
-function BodyItem () {
+BodyItem.propTypes = {
+  onClickItem: PropTypes.func
+}
+
+BodyItem.defaultProps = {
+  onClickItem: () => {}
+}
+
+function BodyItem (props) {
   return (
-    <div className='motel-my-motel-body-item row '>
+    <div
+      className='motel-my-motel-body-item row '
+      onClick={() => {
+        props.onClickItem()
+      }}
+    >
       <div className='row_inf '>
         <img className='image' src={image}></img>
 

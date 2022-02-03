@@ -6,11 +6,29 @@
     align-items: center;
     vertical-align: auto;
     justify-content: space-between;
-    padding: 4px;
+    // padding: 4px;
 
     &__left{
-        width:auto;
+        width:250px;
         height: 100%;
+        display: flex;
+        background-color: rgb(42, 133, 218);
+        align-items: baseline;
+        padding-top: 12px;
+        padding-left: 12px;
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin-left: 4px;
+            margin-right: 16px;
+        }
+
+        div{
+            font-size: 24px;
+            color: #fff;
+            font-weight: 700;
+        }
     }
 
     &__right{

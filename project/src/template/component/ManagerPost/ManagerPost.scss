@@ -11,6 +11,7 @@
         font-size: 24px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         padding: 12px;
         margin-bottom: 4px;
     }
@@ -26,7 +27,7 @@
             border-top: 1px solid #96a6d8;
             margin-top: 24px;
             padding: 12px;
-            height: calc(100% - 60px);
+            height: calc(100% - 64px);
             overflow: auto;
 
             .row {

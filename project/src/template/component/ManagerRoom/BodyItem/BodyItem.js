@@ -1,14 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import image from './../../../../styles/Image/image.jpg'
 import { EditOutlined, DeleteTwoTone } from '@ant-design/icons'
+import PropTypes from 'prop-types'
 
 import { Button } from 'antd'
 
 import './BodyItem.scss'
 
-function BodyItem () {
+BodyItem.propTypes = {
+  onClickItem: PropTypes.func
+}
+
+BodyItem.defaultProps = {
+  onClickItem: () => {}
+}
+
+function BodyItem (props) {
   return (
-    <div className='motel-body-item row '>
+    <div
+      className='motel-body-item row '
+      onClick={() => {
+        props.onClickItem()
+      }}
+    >
       <div className='row_id'>1</div>
 
       <div className='row_inf '>

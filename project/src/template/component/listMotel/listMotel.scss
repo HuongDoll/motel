@@ -21,18 +21,18 @@
             display: flex;
             align-items: center;
             position: absolute;
-            width: calc(100% - 600px);
-            right: 350px;
+            width: calc(100% - 648px);
+            right: 374px;
             top: 70px;
-            border-top: 4px solid #050e28;
-            border-right: 4px solid #050e28;
-            border-bottom: 4px solid #050e28;
+            // border-top: 4px solid #050e28;
+            // border-right: 4px solid #050e28;
+            // border-bottom: 4px solid #050e28;
 
         }
     }
 
     &__filter{
-        background-color: #050e28;
+        // background-color: #2a85da;
         width: 350px;
         height: 100%;
 
@@ -72,24 +72,6 @@
         }
     }
 
-    /* width */
-    ::-webkit-scrollbar {
-    width: 10px;
-    }
-
-    /* Track */
-    ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    }
-
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-    background: #888;
-    }
-
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    }
+    
 
 }

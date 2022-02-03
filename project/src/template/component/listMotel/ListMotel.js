@@ -5,17 +5,40 @@ import { Button, Tooltip } from 'antd'
 import { SearchOutlined } from '@ant-design/icons'
 
 import './listMotel.scss'
+import PostDetail from '../PostDetail/PostDetail'
 
 function ListMotel () {
-  return (
+  const [isClickItem, setIsClickItem] = useState(false)
+
+  return !isClickItem ? (
     <div className='motel-list-motel'>
       <div className='motel-list-motel__list'>
         <div className='lable'> Danh sách phòng</div>
-        <ItemModel></ItemModel>
-        <ItemModel></ItemModel>
-        <ItemModel></ItemModel>
-        <ItemModel></ItemModel>
-        <ItemModel></ItemModel>
+        <ItemModel
+          onClickItem={() => {
+            setIsClickItem(true)
+          }}
+        ></ItemModel>
+        <ItemModel
+          onClickItem={() => {
+            setIsClickItem(true)
+          }}
+        ></ItemModel>
+        <ItemModel
+          onClickItem={() => {
+            setIsClickItem(true)
+          }}
+        ></ItemModel>
+        <ItemModel
+          onClickItem={() => {
+            setIsClickItem(true)
+          }}
+        ></ItemModel>
+        <ItemModel
+          onClickItem={() => {
+            setIsClickItem(true)
+          }}
+        ></ItemModel>
       </div>
       <div className='motel-list-motel__filter'>
         <div className='motel-list-motel__filter_search'>
@@ -80,6 +103,12 @@ function ListMotel () {
         </div>
       </div>
     </div>
+  ) : (
+    <PostDetail
+      onClickBack={() => {
+        setIsClickItem(false)
+      }}
+    ></PostDetail>
   )
 }
 

@@ -1,10 +1,25 @@
 import React, { useState, useEffect } from 'react'
 import image from './../../../../styles/Image/image.jpg'
+import PropTypes from 'prop-types'
+
 import './ItemModel.scss'
 
-function ItemModel () {
+ItemModel.propTypes = {
+  onClickItem: PropTypes.func
+}
+
+ItemModel.defaultProps = {
+  onClickItem: () => {}
+}
+
+function ItemModel (props) {
   return (
-    <div className='motel-login'>
+    <div
+      className='motel-login'
+      onClick={() => {
+        props.onClickItem()
+      }}
+    >
       <div className='motel-login__left'>
         <div className='time'>19:15:60 30/12/2021</div>
         <img className='image' src={image}></img>

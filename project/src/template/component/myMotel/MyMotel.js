@@ -3,11 +3,13 @@ import { Select } from 'antd'
 
 import './myMotel.scss'
 import BodyItem from './BodyItem/BodyItem'
+import RoomDetail from '../RoomDetail/RoomDetail'
 
 function MyMotel () {
   const { Option } = Select
+  const [isClickItem, setIsClickItem] = useState(false)
 
-  return (
+  return !isClickItem ? (
     <div className='motel-mymotel'>
       <div className='motel-mymotel__lable'>Phòng của tôi</div>
       <div className='motel-mymotel__content'>
@@ -33,15 +35,45 @@ function MyMotel () {
             <div className='row_status header'>Trạng thái</div>
             <div className='row_option header'>Tùy chọn</div>
           </div>
-          <BodyItem></BodyItem>
-          <BodyItem></BodyItem>
-          <BodyItem></BodyItem>
-          <BodyItem></BodyItem>
-          <BodyItem></BodyItem>
-          <BodyItem></BodyItem>
+          <BodyItem
+            onClickItem={() => {
+              setIsClickItem(true)
+            }}
+          ></BodyItem>
+          <BodyItem
+            onClickItem={() => {
+              setIsClickItem(true)
+            }}
+          ></BodyItem>
+          <BodyItem
+            onClickItem={() => {
+              setIsClickItem(true)
+            }}
+          ></BodyItem>
+          <BodyItem
+            onClickItem={() => {
+              setIsClickItem(true)
+            }}
+          ></BodyItem>
+          <BodyItem
+            onClickItem={() => {
+              setIsClickItem(true)
+            }}
+          ></BodyItem>
+          <BodyItem
+            onClickItem={() => {
+              setIsClickItem(true)
+            }}
+          ></BodyItem>
         </div>
       </div>
     </div>
+  ) : (
+    <RoomDetail
+      onClickBack={() => {
+        setIsClickItem(false)
+      }}
+    ></RoomDetail>
   )
 }
 

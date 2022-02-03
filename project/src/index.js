@@ -6,7 +6,6 @@ import HomePage from './template/homePage/HomePage'
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <App /> */}
     <HomePage></HomePage>
   </React.StrictMode>,
   document.getElementById('root')
