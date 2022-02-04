@@ -3,6 +3,7 @@ using HTHUONG.MOTEL.Core.Constants;
 using HTHUONG.MOTEL.Core.DTOs;
 using HTHUONG.MOTEL.Core.DTOs.AjaxResult;
 using HTHUONG.MOTEL.Core.Utils;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Nancy;
 using System;

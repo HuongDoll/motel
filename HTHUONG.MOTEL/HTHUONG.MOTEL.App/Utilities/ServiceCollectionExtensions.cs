@@ -1,6 +1,7 @@
 ﻿using HTHUONG.MOTEL.App.BL;
 using HTHUONG.MOTEL.App.BL.Room;
 using HTHUONG.MOTEL.Core.Authentication;
+using HTHUONG.MOTEL.Core.Repository.File;
 using HTHUONG.MOTEL.Core.Repository.Room;
 using HTHUONG.MOTEL.Core.Repository.User;
 using HTHUONG.MOTEL.Infrastructure;
@@ -25,9 +26,12 @@ namespace HTHUONG.MOTEL.App.Utilities
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IRoomRepository, RoomRepository>();
+            services.AddTransient<IFileRepository, FileRepository>();
 
             services.AddTransient<IUserBL, UserBL>();
             services.AddTransient<IRoomBL, RoomBL>();
+            services.AddTransient<IMinIOService, MinIOService>();
+            services.AddTransient<IFileService, FileService>();
 
             services.AddSingleton<AuthenticationConfig>();
         }

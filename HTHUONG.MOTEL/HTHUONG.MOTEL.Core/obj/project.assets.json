@@ -3455,24 +3455,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ADMIN\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "T:\\Project4\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
+      "projectUniqueName": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
       "projectName": "HTHUONG.MOTEL.Core",
-      "projectPath": "T:\\Project4\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "T:\\Project4\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\obj\\",
+      "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\HTHUONG.MOTEL.Core.csproj",
+      "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+      "outputPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Core\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3486,8 +3481,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "T:\\Project4\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
-              "projectPath": "T:\\Project4\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj"
+            "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj": {
+              "projectPath": "D:\\motel_HTHUONG\\motel\\HTHUONG.MOTEL\\HTHUONG.MOTEL.Infrastructure\\HTHUONG.MOTEL.Infrastructure.csproj"
             }
           }
         }
@@ -3550,7 +3545,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

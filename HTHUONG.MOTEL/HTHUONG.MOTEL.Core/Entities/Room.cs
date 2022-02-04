@@ -26,6 +26,8 @@ namespace HTHUONG.MOTEL.Core.Entities
         public RoomStatus Status { get; set; }
         public string Content { get; set; }
         public DateTime PublishDate { get; set; }
+        public string UrlThumbnail { get; set; } = "";
+
 
         /// <summary>
         /// Đã bị xóa hay chưa (Xóa mềm): 0: chưa bị xóa; 1: đã bị xóa

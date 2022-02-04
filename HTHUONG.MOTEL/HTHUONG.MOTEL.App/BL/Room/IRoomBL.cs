@@ -10,7 +10,7 @@ namespace HTHUONG.MOTEL.App.BL.Room
     {
         Task<long> CountRoomsAsync(GetListRequest getListRequest);
 
-        Task<Core.Entities.Room> GetRoomByIDAsync(string emailID);
+        Task<Core.Entities.Room> GetRoomByIDAsync(string roomID);
 
         Task<IEnumerable<Core.Entities.Room>> GetRoomsAsync(GetListRequest getListRequest, long limit, long offset);
 
