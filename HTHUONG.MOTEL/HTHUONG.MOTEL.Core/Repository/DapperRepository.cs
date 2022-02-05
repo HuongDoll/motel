@@ -119,13 +119,18 @@ namespace HTHUONG.MOTEL.Core.Repository
             using (var _dapperDatabaseContext = (DapperDatabaseContext)_factory.Context())
             {
                 var res = new List<T>();
+                var table = _tableName;
+                if (_tableName.ToLower() == "userapp")
+                {
+                    table = "User";
+                }
                 if (isDeleted != null)
                 {
-                    res = (await GetEntitiesAsync($"SELECT * FROM {_tableName} WHERE IsDeleted={isDeleted} AND {_tableName}ID = '{id.ToString()}';")).AsList();
+                    res = (await GetEntitiesAsync($"SELECT * FROM {_tableName} WHERE IsDeleted={isDeleted} AND {table}ID = '{id.ToString()}';")).AsList();
                 }
                 else
                 {
-                    res = (await GetEntitiesAsync($"SELECT * FROM {_tableName} WHERE {_tableName}ID ='{id.ToString()}';")).AsList();
+                    res = (await GetEntitiesAsync($"SELECT * FROM {_tableName} WHERE {table}ID ='{id.ToString()}';")).AsList();
                 }
                 if (res.Count > 0)
                 {
@@ -370,6 +375,11 @@ namespace HTHUONG.MOTEL.Core.Repository
         /// </returns>
         public async Task<bool> UpdateAsync(T entity, string id)
         {
+            var table = _tableName;
+            if (_tableName.ToLower() == "userapp")
+            {
+                table = "User";
+            }
             using (var _dapperDatabaseContext = (DapperDatabaseContext)_factory.Context())
             {
                 //Buil command
@@ -378,15 +388,15 @@ namespace HTHUONG.MOTEL.Core.Repository
                 foreach (var prop in props)
                 {
                     if (prop.Name == "CreatedDate" || prop.Name == "CreatedBy") continue;
-                    if (prop.Name == $"{_tableName}ID") continue;
+                    if (prop.Name == $"{table}ID") continue;
                     sql.Append($"{prop.Name} = @{prop.Name}, ");
                 }
-                sql.Remove(sql.Length - 2, 2).Append($" WHERE {_tableName}ID=@id;");
+                sql.Remove(sql.Length - 2, 2).Append($" WHERE {table}ID=@id;");
                 _dapperDatabaseContext._sqlCommand.CommandType = CommandType.Text;
                 _dapperDatabaseContext._sqlCommand.CommandText = sql.ToString();
                 foreach (var prop in props)
                 {
-                    if (prop.Name == $"{_tableName}ID" ) continue;
+                    if (prop.Name == $"{table}ID" ) continue;
                     var param = new MySqlParameter(prop.Name, prop.GetValue(entity));
                     _dapperDatabaseContext._sqlCommand.Parameters.Add(param);
                 }

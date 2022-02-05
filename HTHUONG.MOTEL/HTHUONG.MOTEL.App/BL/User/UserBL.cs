@@ -30,6 +30,23 @@ namespace HTHUONG.MOTEL.App.BL
             return user.UserID.ToString();
         }
 
+        public string ChangePassword(string newPassword)
+        {
+            return HashPassWord("this is a secret text", newPassword);
+        }
+
+        public async Task<Core.Entities.UserApp> GetUserByIDAsync(string userID)
+        {
+            var user = await _userRepository.GetByIdAsync(userID);
+            return user;
+        }
+
+        public bool IsMapPassword(string password, string passwordOld)
+        {
+            var passwordCheck = HashPassWord("this is a secret text", password);
+            return passwordCheck == passwordOld;
+        }
+
         public async Task<object> Login(LoginDTO loginDTO)
         {
             loginDTO.Password = HashPassWord("this is a secret text", loginDTO.Password);
@@ -47,6 +64,15 @@ namespace HTHUONG.MOTEL.App.BL
                 userID = user.UserID
             };
             return result;
+        }
+
+        public async Task<bool> UpdateUserByIDAsync(Core.Entities.UserApp user, Core.Entities.UserApp oldUser, string userFullName)
+        {
+            user.ModifiedDate = DateTime.Now;
+            user.ModifiedBy = userFullName;
+            user.IsDeleted = false;
+
+            return await _userRepository.UpdateAsync(user, oldUser.UserID.ToString());
         }
 
 

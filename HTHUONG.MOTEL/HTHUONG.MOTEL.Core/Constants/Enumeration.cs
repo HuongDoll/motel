@@ -51,5 +51,11 @@ namespace HTHUONG.MOTEL.Core.Constants
             Process = 1,
             Full = 2
         }
+
+        public enum BillStatus
+        {
+            None = 0,
+            Success = 1
+        }
     }
 }

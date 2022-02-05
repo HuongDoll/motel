@@ -1,4 +1,5 @@
 ﻿using Dapper.Contrib.Extensions;
+using HTHUONG.MOTEL.Core.DTOs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,5 +36,7 @@ namespace HTHUONG.MOTEL.Core.Entities
         /// Đã bị xóa hay chưa (Xóa mềm): 0: chưa bị xóa; 1: đã bị xóa
         /// </summary>
         public bool IsDeleted { get; set; } = false;
+
+       
     }
 }

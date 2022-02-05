@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HTHUONG.MOTEL.Core.Repository.User
+namespace HTHUONG.MOTEL.Core.Repository.Bill
 {
     public class BillRepository : DapperRepository<Entities.Bill>, IBillRepository
     {
