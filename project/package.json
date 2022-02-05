@@ -10,6 +10,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.18.2",
+    "antd-img-crop": "^4.1.0",
+    "axios": "^0.25.0",
     "grapesjs": "^0.17.29",
     "grapesjs-preset-webpage": "^0.1.11",
     "grapesjs-react": "^4.0.1-alpha",

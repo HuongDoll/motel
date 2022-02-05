@@ -170,7 +170,6 @@ D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL.App.MvcApplicationPartsAssemblyInfo.cs
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL.App.MvcApplicationPartsAssemblyInfo.cache
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\staticwebassets\HTHUONG.MOTEL.App.StaticWebAssets.Manifest.cache
-D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\staticwebassets\HTHUONG.MOTEL.App.StaticWebAssets.xml
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\scopedcss\bundle\HTHUONG.MOTEL.App.styles.css
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL.App.RazorTargetAssemblyInfo.cache
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL.App.csproj.CopyComplete
@@ -254,3 +253,4 @@ D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL
 D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\ref\HTHUONG.MOTEL.App.dll
 D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL.App.pdb
 D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\obj\Debug\net5.0\HTHUONG.MOTEL.App.genruntimeconfig.cache
+D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.App\bin\Debug\net5.0\HTHUONG.MOTEL.App.StaticWebAssets.xml
