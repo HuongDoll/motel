@@ -33,3 +33,15 @@ D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.dll
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\ref\HTHUONG.MOTEL.Infrastructure.dll
 D:\motel_HTHUONG\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.pdb
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\bin\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.deps.json
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\bin\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.dll
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\bin\Debug\net5.0\ref\HTHUONG.MOTEL.Infrastructure.dll
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\bin\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.pdb
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.csproj.AssemblyReference.cache
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.AssemblyInfoInputs.cache
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.AssemblyInfo.cs
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.csproj.CoreCompileInputs.cache
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.dll
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\ref\HTHUONG.MOTEL.Infrastructure.dll
+D:\project4\motel\HTHUONG.MOTEL\HTHUONG.MOTEL.Infrastructure\obj\Debug\net5.0\HTHUONG.MOTEL.Infrastructure.pdb

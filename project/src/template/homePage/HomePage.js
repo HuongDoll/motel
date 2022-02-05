@@ -27,8 +27,11 @@ import {
   WalletOutlined,
   FormOutlined,
   SolutionOutlined,
-  AreaChartOutlined
+  AreaChartOutlined,
+  HeartOutlined,
+  UserOutlined
 } from '@ant-design/icons'
+import SettingAcount from '../component/SettingAcount/SettingAcount'
 
 const MENU_INDEX = {
   HOME: 1,
@@ -39,7 +42,9 @@ const MENU_INDEX = {
   CUSTOMER: 6,
   MANAGEMENT_INVOICE: 7,
   REVENUE: 8,
-  INVOICE: 9
+  INVOICE: 9,
+  POST_FAVORITE: 10,
+  ACOUNT: 11
 }
 
 function HomePage () {
@@ -162,7 +167,7 @@ function HomePage () {
               }}
             />
 
-            <span>Nhận khách trọ</span>
+            <span>Nhận/trả khách trọ</span>
           </div>
 
           <div
@@ -205,6 +210,46 @@ function HomePage () {
 
             <span>Thống kê doanh thu</span>
           </div>
+
+          <div
+            className={
+              'motel-homePage__body_menu_item ' +
+              (index === MENU_INDEX.POST_FAVORITE ? 'select-menu' : '')
+            }
+            onClick={() => {
+              setIndex(MENU_INDEX.POST_FAVORITE)
+            }}
+          >
+            <HeartOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.POST_FAVORITE ? '#2a85da' : '#fff'
+              }}
+            />
+
+            <span>Yêu thích</span>
+          </div>
+
+          <div
+            className={
+              'motel-homePage__body_menu_item ' +
+              (index === MENU_INDEX.ACOUNT ? 'select-menu' : '')
+            }
+            onClick={() => {
+              setIndex(MENU_INDEX.ACOUNT)
+            }}
+          >
+            <UserOutlined
+              style={{
+                fontSize: '24px',
+                marginRight: '12px',
+                color: index === MENU_INDEX.ACOUNT ? '#2a85da' : '#fff'
+              }}
+            />
+
+            <span>Tài khoản</span>
+          </div>
         </div>
         <div className='motel-homePage__body_content'>
           {index === MENU_INDEX.HOME ? <ListMotel></ListMotel> : <></>}
@@ -232,6 +277,11 @@ function HomePage () {
           {index === MENU_INDEX.MY_ROOM ? <MyMotel></MyMotel> : <></>}
           {index === MENU_INDEX.REVENUE ? <Revenue></Revenue> : <></>}
           {index === MENU_INDEX.INVOICE ? <Invoice></Invoice> : <></>}
+          {index === MENU_INDEX.ACOUNT ? (
+            <SettingAcount></SettingAcount>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>

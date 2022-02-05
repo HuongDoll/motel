@@ -28,37 +28,37 @@
         height: calc(100% - 60px);
         overflow: auto;
 
-        .row {
-            display: flex;
-            //
-        }
+            .row {
+                display: flex;
+                //
+            }
 
-        .header {
-            height: 40px;
-            font-size: 16px;
-            font-weight: 700;
-        }
+            .header {
+                height: 40px;
+                font-size: 16px;
+                font-weight: 700;
+            }
 
-        .row_id{
-            width: 10%;
-            min-width: 70px;
-            max-width: 100px;
+            .row_id{
+                width: 10%;
+                min-width: 70px;
+                max-width: 100px;
 
-        }
+            }
 
-        .row_inf {
-            width: 50%;
-        }
+            .row_inf {
+                width: 50%;
+            }
 
-        .row_status {
-            width: 20%;
-            min-width: 200px;
-        }
+            .row_status {
+                width: 20%;
+                min-width: 200px;
+            }
 
-        .row_option {
-            width: 20%;
-            min-width: 200px;
-        }
+            .row_option {
+                width: 20%;
+                min-width: 200px;
+            }
         }
 
     }
