@@ -18,6 +18,8 @@ namespace HTHUONG.MOTEL.Core.Entities
         public int PriceRoom { get; set; }
         public int PriceService { get; set; }
 
+        public string Description { get; set; }
+
         /// <summary>
         /// Đã bị xóa hay chưa (Xóa mềm): 0: chưa bị xóa; 1: đã bị xóa
         /// </summary>

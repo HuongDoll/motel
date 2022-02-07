@@ -61,7 +61,8 @@ namespace HTHUONG.MOTEL.App.BL
                 access = acessToken,
                 email = user.Email,
                 fullName = user.FullName,
-                userID = user.UserID
+                userID = user.UserID,
+                userType = user.UserType
             };
             return result;
         }

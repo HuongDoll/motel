@@ -1,32 +1,39 @@
-import React, { useState, useEffect } from 'react'
-import image from './../../../../styles/Image/image.jpg'
-import { EditOutlined, DeleteTwoTone } from '@ant-design/icons'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react';
+import image from './../../../../styles/Image/image.jpg';
+import { EditOutlined, DeleteTwoTone } from '@ant-design/icons';
+import PropTypes from 'prop-types';
 
-import { Button } from 'antd'
+import { Button } from 'antd';
 
-import './BodyItem.scss'
+import './BodyItem.scss';
 
 BodyItem.propTypes = {
   onClickItem: PropTypes.func,
-  data: PropTypes.object
-}
+  data: PropTypes.object,
+};
 
 BodyItem.defaultProps = {
   onClickItem: () => {},
-  data: {}
-}
+  data: {},
+};
 
-function BodyItem (props) {
+function BodyItem(props) {
   return (
     <div
       className='motel-body-item row '
       onClick={() => {
-        props.onClickItem()
+        props.onClickItem();
       }}
     >
       <div className='row_inf '>
-        <img className='image' src={image}></img>
+        <img
+          className='image'
+          src={
+            props.data?.urlThumbnail
+              ? `https://localhost:44342/api/public/files/${props.data?.urlThumbnail}`
+              : image
+          }
+        ></img>
 
         <div className='row_inf_content'>
           <div className='address'>{props.data?.address}</div>
@@ -44,7 +51,7 @@ function BodyItem (props) {
         ></Button>
       </div>
     </div>
-  )
+  );
 }
 
-export default BodyItem
+export default BodyItem;

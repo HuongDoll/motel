@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import { Button, Tooltip } from 'antd'
+import React, { useState, useEffect } from 'react';
+import { Button, Tooltip } from 'antd';
 import {
   PlusOutlined,
   LeftOutlined,
   SaveOutlined,
-  SendOutlined
-} from '@ant-design/icons'
+  SendOutlined,
+} from '@ant-design/icons';
 
-import './ManagerPost.scss'
-import BodyItem from './BodyItem/BodyItem'
-import EditorPost from './EditorPost/EditorPost'
-import PostDetail from '../PostDetail/PostDetail'
+import './ManagerPost.scss';
+import BodyItem from './BodyItem/BodyItem';
+import EditorPost from './EditorPost/EditorPost';
+import PostDetail from '../PostDetail/PostDetail';
 
-function ManagerPost () {
-  const [isEditor, setIsEditor] = useState(false)
-  const [isClickItem, setIsClickItem] = useState(false)
+function ManagerPost() {
+  const [isEditor, setIsEditor] = useState(false);
+  const [isClickItem, setIsClickItem] = useState(false);
+  const [dataContent, setDataContent] = useState('');
 
   return isEditor ? (
     <div className='motel-post'>
@@ -32,7 +33,10 @@ function ManagerPost () {
           <Button
             icon={<SaveOutlined />}
             size='large'
-            onClick={() => {}}
+            onClick={() => {
+              // TODO HTHUONG
+              console.log(dataContent);
+            }}
             style={{ marginRight: '8px' }}
           >
             Lưu
@@ -48,7 +52,11 @@ function ManagerPost () {
         </div>
       </div>
       <div className='motel-post__content'>
-        <EditorPost></EditorPost>
+        <EditorPost
+          getContent={(data) => {
+            setDataContent(data);
+          }}
+        ></EditorPost>
       </div>
     </div>
   ) : !isClickItem ? (
@@ -73,31 +81,31 @@ function ManagerPost () {
           </div>
           <BodyItem
             onClickItem={() => {
-              setIsClickItem(true)
+              setIsClickItem(true);
             }}
           ></BodyItem>
 
           <BodyItem
             onClickItem={() => {
-              setIsClickItem(true)
+              setIsClickItem(true);
             }}
           ></BodyItem>
 
           <BodyItem
             onClickItem={() => {
-              setIsClickItem(true)
+              setIsClickItem(true);
             }}
           ></BodyItem>
 
           <BodyItem
             onClickItem={() => {
-              setIsClickItem(true)
+              setIsClickItem(true);
             }}
           ></BodyItem>
 
           <BodyItem
             onClickItem={() => {
-              setIsClickItem(true)
+              setIsClickItem(true);
             }}
           ></BodyItem>
         </div>
@@ -106,10 +114,10 @@ function ManagerPost () {
   ) : (
     <PostDetail
       onClickBack={() => {
-        setIsClickItem(false)
+        setIsClickItem(false);
       }}
     ></PostDetail>
-  )
+  );
 }
 
-export default ManagerPost
+export default ManagerPost;

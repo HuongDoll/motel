@@ -1,4 +1,5 @@
-﻿using HTHUONG.MOTEL.Core.Entities;
+﻿using HTHUONG.MOTEL.Core.DTOs;
+using HTHUONG.MOTEL.Core.Entities;
 using HTHUONG.MOTEL.Core.Repository.File;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,17 @@ namespace HTHUONG.MOTEL.App.BL
         {
             _fileRepository = fileRepository;
         }
+
+        public async Task<long> CountFilesAsync(GetListRequest getListRequest)
+        {
+            return await _fileRepository.CountAsync(getListRequest, false);
+        }
+
+        public async Task<IEnumerable<File>> GetFilesAsync(GetListRequest getListRequest, long limit, long offset)
+        {
+            return await _fileRepository.ListAsync(getListRequest, limit, offset, false);
+        }
+
         public async Task<Guid> InsertFileAsync(File file)
         {
             var now = DateTime.UtcNow;

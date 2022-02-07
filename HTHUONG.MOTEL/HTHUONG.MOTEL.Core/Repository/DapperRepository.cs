@@ -220,12 +220,16 @@ namespace HTHUONG.MOTEL.Core.Repository
                 #endregion
 
                 #region Build câu lệnh truy vấn WHERE
-
+                var table = _tableName;
+                if(table.ToLower() == "file")
+                {
+                    table = "files";
+                }
                 if (selectedFields.Count > 0)
                 {
                     //Build câu truy vấn
                     var sql = new StringBuilder("SELECT ");
-                    sql.Append(string.Join(',', selectedFields)).Append($" FROM {_tableName} WHERE  ");
+                    sql.Append(string.Join(',', selectedFields)).Append($" FROM {table} WHERE  ");
                     if (isDefault == true)
                     {
                         sql.Append(" (IsDefault=TRUE) ");
@@ -450,8 +454,13 @@ namespace HTHUONG.MOTEL.Core.Repository
                         if (filterAnds.Count > 0) filters.Add(filterAnds);
                     }
                 }
+                var table = _tableName;
+                if (table.ToLower() == "file")
+                {
+                    table = "files";
+                }
                 //Build câu truy vấn
-                var sql = new StringBuilder($"SELECT COUNT({_tableName}ID) FROM {_tableName} WHERE ");
+                var sql = new StringBuilder($"SELECT COUNT({_tableName}ID) FROM {table} WHERE ");
                 //Nếu có IsDeleted thì truyền thêm IsDeleted
                 if (isDefault == true)
                 {

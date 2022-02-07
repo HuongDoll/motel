@@ -1,5 +1,7 @@
 ﻿using HTHUONG.MOTEL.App.BL;
 using HTHUONG.MOTEL.App.BL.Room;
+using HTHUONG.MOTEL.Core.Constants;
+using HTHUONG.MOTEL.Core.DTOs;
 using HTHUONG.MOTEL.Core.Utils;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +36,30 @@ namespace HTHUONG.MOTEL.App.Controllers
                 var byteContent = await _minIO.GetFileToMinIOAsync(hostID, key);
                 String mimeType = MimeMapping.MimeUtility.GetMimeMapping(key);
                 return File(byteContent, mimeType, key);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(CommonFunction.GenerateGetExceptionErrorResult(HttpContext));
+            }
+        }
+
+        [HttpPost]
+        [Route("filter")]
+        public async Task<IActionResult> GetFilesAsync([FromBody] GetListRequest getListRequest, long limit = 10, long offset = 0)
+        {
+            try
+            {
+                var userName = Request.Headers[HeaderKey.FULL_NAME].ToString();
+                if (string.IsNullOrEmpty(userName))
+                    return BadRequest(CommonFunction.GenerateLackOfCompanyIDErrorResult(HttpContext));
+
+                var data = await _fileService.GetFilesAsync(getListRequest, limit, offset);
+                var total = await _fileService.CountFilesAsync(getListRequest);
+                return Ok(new
+                {
+                    Data = data.ToList(),
+                    TotalRecords = total
+                });
             }
             catch (Exception ex)
             {

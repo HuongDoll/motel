@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import logo from './../../styles/Image/logo.png'
-import avt from './../../styles/Image/avt.png'
-import { Menu, Dropdown, message, Input, EyeTwoTone } from 'antd'
-import { Modal, Button, notification, Radio } from 'antd'
-import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import logo from './../../styles/Image/logo.png';
+import avt from './../../styles/Image/avt.png';
+import { Menu, Dropdown, message, Input, EyeTwoTone } from 'antd';
+import { Modal, Button, notification, Radio } from 'antd';
+import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
-import './header.scss'
+import './header.scss';
 
-function Header () {
-  const [isLogin, setIsLogin] = useState(false)
-  const [modalLogin, setModalLogin] = useState(false)
-  const [modalRes, setModalRes] = useState(false)
+function Header() {
+  const [isLogin, setIsLogin] = useState(false);
+  const [modalLogin, setModalLogin] = useState(false);
+  const [modalRes, setModalRes] = useState(false);
 
   const [user, setUser] = useState({
     fullName: 'huong',
@@ -19,24 +19,24 @@ function Header () {
     password: '',
     email: 'huong',
     phone: '0973843806',
-    passwordConfirm: ''
-  })
+    passwordConfirm: '',
+  });
 
-  const [name, setName] = useState('')
+  const [name, setName] = useState('');
 
   useEffect(() => {
-    console.log(localStorage.getItem('login'))
-    console.log(isLogin)
+    console.log(localStorage.getItem('login'));
+    console.log(isLogin);
 
     // setIsLogin(localStorage.getItem('login'))
-    console.log(isLogin)
+    console.log(isLogin);
 
-    setName(localStorage.getItem('fullName').toString())
-  }, [])
+    setName(localStorage.getItem('fullName')?.toString());
+  }, []);
 
   const onClick = ({ key }) => {
-    if (key === '2') logout()
-  }
+    if (key === '2') logout();
+  };
 
   const menu = (
     <Menu onClick={onClick}>
@@ -49,7 +49,7 @@ function Header () {
         Đăng xuất
       </Menu.Item>
     </Menu>
-  )
+  );
 
   /**
    * tao tai khoan
@@ -61,15 +61,15 @@ function Header () {
         userName: user.userName,
         password: user.password,
         email: user.email,
-        phone: user.phone
+        phone: user.phone,
       })
-      .then(res => {
-        console.log(res)
-        console.log(res.data)
-        setModalRes(false)
-        setModalLogin(true)
-      })
-  }
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        setModalRes(false);
+        setModalLogin(true);
+      });
+  };
 
   /**
    * dang nhap
@@ -78,41 +78,41 @@ function Header () {
     axios
       .post(`https://localhost:44342/api/users/login`, {
         userName: user.userName,
-        password: user.password
+        password: user.password,
       })
-      .then(res => {
-        console.log(res?.data?.fullName)
-        console.log(res.data)
-        setIsLogin(true)
-        setModalLogin(false)
+      .then((res) => {
+        console.log(res?.data?.fullName);
+        console.log(res.data);
+        setIsLogin(true);
+        setModalLogin(false);
 
         notification.open({
           message: 'Đăng nhập thành công',
           description: 'Xin chào ' + res?.data?.fullName,
           onClick: () => {
-            console.log('Notification Clicked!')
-          }
-        })
+            console.log('Notification Clicked!');
+          },
+        });
 
-        localStorage.setItem('fullName', res?.data?.fullName)
-        localStorage.setItem('userID', res?.data?.userID)
-        localStorage.setItem('access', res?.data?.access)
-        localStorage.setItem('login', true)
+        localStorage.setItem('fullName', res?.data?.fullName);
+        localStorage.setItem('userID', res?.data?.userID);
+        localStorage.setItem('access', res?.data?.access);
+        localStorage.setItem('login', true);
 
-        setName(res?.data?.fullName)
-      })
-  }
+        setName(res?.data?.fullName);
+      });
+  };
 
   /**
    * dang  xuat
    */
   const logout = function () {
-    localStorage.setItem('fullName', '')
-    localStorage.setItem('userID', '')
-    localStorage.setItem('access', '')
-    localStorage.setItem('login', false)
-    setIsLogin(false)
-  }
+    localStorage.setItem('fullName', '');
+    localStorage.setItem('userID', '');
+    localStorage.setItem('access', '');
+    localStorage.setItem('login', false);
+    setIsLogin(false);
+  };
 
   return (
     <div className='motel-header'>
@@ -128,9 +128,9 @@ function Header () {
               <div
                 className='ant-dropdown-link motel-header__right_name
 '
-                onClick={e => e.preventDefault()}
+                onClick={(e) => e.preventDefault()}
               >
-                {name.toString()}
+                {name?.toString()}
                 <img
                   className='motel-header__right_avt'
                   src={avt}
@@ -143,7 +143,7 @@ function Header () {
           <>
             <Button
               onClick={() => {
-                setModalLogin(true)
+                setModalLogin(true);
               }}
             >
               Đăng nhập
@@ -151,7 +151,7 @@ function Header () {
             <Button
               type='primary'
               onClick={() => {
-                setModalRes(true)
+                setModalRes(true);
               }}
             >
               Đăng ký
@@ -161,7 +161,7 @@ function Header () {
               style={{ top: 20 }}
               visible={modalLogin}
               onOk={() => {
-                clickLogin()
+                clickLogin();
               }}
               onCancel={() => setModalLogin(false)}
             >
@@ -170,16 +170,16 @@ function Header () {
                 placeholder='Tên đăng nhập'
                 style={{ marginBottom: '16px' }}
                 required
-                onChange={value => {
-                  setUser({ ...user, userName: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, userName: value.target.value });
                 }}
               />
 
               <p>Mật khẩu</p>
               <Input.Password
                 placeholder='Mật khẩu'
-                onChange={value => {
-                  setUser({ ...user, password: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, password: value.target.value });
                 }}
               />
             </Modal>
@@ -188,7 +188,7 @@ function Header () {
               style={{ top: 20 }}
               visible={modalRes}
               onOk={() => {
-                clickResignter()
+                clickResignter();
               }}
               onCancel={() => setModalRes(false)}
             >
@@ -198,8 +198,8 @@ function Header () {
                 style={{ marginBottom: '16px' }}
                 required
                 defaultValue={user.fullName}
-                onChange={value => {
-                  setUser({ ...user, fullName: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, fullName: value.target.value });
                 }}
               />
               <p>Số điện thoại (*)</p>
@@ -208,8 +208,8 @@ function Header () {
                 style={{ marginBottom: '16px' }}
                 required
                 defaultValue={user.phone}
-                onChange={value => {
-                  setUser({ ...user, phone: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, phone: value.target.value });
                 }}
               />
               <p>Email</p>
@@ -218,8 +218,8 @@ function Header () {
                 style={{ marginBottom: '16px' }}
                 required
                 defaultValue={user.email}
-                onChange={value => {
-                  setUser({ ...user, email: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, email: value.target.value });
                 }}
               />
 
@@ -229,8 +229,8 @@ function Header () {
                 style={{ marginBottom: '16px' }}
                 required
                 defaultValue={user.userName}
-                onChange={value => {
-                  setUser({ ...user, userName: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, userName: value.target.value });
                 }}
               />
 
@@ -238,16 +238,16 @@ function Header () {
               <Input.Password
                 placeholder='Mật khẩu'
                 style={{ marginBottom: '16px' }}
-                onChange={value => {
-                  setUser({ ...user, password: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, password: value.target.value });
                 }}
               />
               <p>Xác nhận mật khẩu (*)</p>
               <Input.Password
                 placeholder='Mật khẩu'
                 style={{ marginBottom: '16px' }}
-                onChange={value => {
-                  setUser({ ...user, passwordConfirm: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, passwordConfirm: value.target.value });
                 }}
               />
               <p>Loại tài khoản</p>
@@ -263,7 +263,7 @@ function Header () {
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
