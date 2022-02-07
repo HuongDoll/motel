@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Tooltip, Modal, Input, Select } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
+import axios from 'axios'
 
 import './ManagerInvoice.scss'
 import BodyItem from './BodyItem/BodyItem'
@@ -9,6 +10,44 @@ function ManagerInvoice () {
   const [isCreatInvoice, setIsCreatInvoice] = useState(false)
   const { Option } = Select
   const { TextArea } = Input
+  const [invoice, setInvoice] = useState({
+    status: 0,
+    userID: '',
+    hostID: '',
+    priceRoom: 0,
+    priceService: 0,
+    note: ''
+  })
+
+  const createInvoice = function () {
+    setIsCreatInvoice(false)
+
+    var token = localStorage.getItem('access')
+    var hostId = localStorage.getItem('userID')
+
+    axios
+      .post(
+        `https://localhost:44342/api/bills`,
+        {
+          status: 0,
+          userID: invoice.userID,
+          hostID: hostId,
+          priceRoom: invoice.priceRoom,
+          priceService: invoice.priceService,
+          note: invoice.note
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then(res => {
+        console.log(res)
+        console.log(res.data)
+        setIsCreatInvoice(false)
+      })
+  }
 
   return (
     <div className='motel-manager-invoice'>
@@ -26,7 +65,7 @@ function ManagerInvoice () {
           title='Tạo hóa đơn'
           style={{ top: 20 }}
           visible={isCreatInvoice}
-          onOk={() => setIsCreatInvoice(false)}
+          onOk={() => createInvoice()}
           onCancel={() => setIsCreatInvoice(false)}
         >
           <p>Phòng</p>
@@ -71,12 +110,20 @@ function ManagerInvoice () {
             placeholder='Giá dịch vụ'
             style={{ marginBottom: '16px' }}
             required
+            defaultValue={invoice.priceService}
+            onChange={value => {
+              setInvoice({ ...invoice, priceService: value.target.value })
+            }}
           />
           <p>Ghi chú</p>
           <TextArea
             rows={3}
             placeholder='Ghi chú'
             style={{ marginBottom: '16px' }}
+            defaultValue={invoice.note}
+            onChange={value => {
+              setInvoice({ ...invoice, note: value.target.value })
+            }}
           />
         </Modal>
 

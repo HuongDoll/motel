@@ -28,7 +28,7 @@ function Header () {
     console.log(localStorage.getItem('login'))
     console.log(isLogin)
 
-    setIsLogin(localStorage.getItem('login'))
+    // setIsLogin(localStorage.getItem('login'))
     console.log(isLogin)
 
     setName(localStorage.getItem('fullName').toString())
@@ -95,8 +95,8 @@ function Header () {
         })
 
         localStorage.setItem('fullName', res?.data?.fullName)
-        localStorage.setItem('userID', JSON.stringify(res?.data?.userID))
-        localStorage.setItem('access', JSON.stringify(res?.data?.access))
+        localStorage.setItem('userID', res?.data?.userID)
+        localStorage.setItem('access', res?.data?.access)
         localStorage.setItem('login', true)
 
         setName(res?.data?.fullName)

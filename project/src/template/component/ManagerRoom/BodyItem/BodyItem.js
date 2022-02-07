@@ -8,11 +8,13 @@ import { Button } from 'antd'
 import './BodyItem.scss'
 
 BodyItem.propTypes = {
-  onClickItem: PropTypes.func
+  onClickItem: PropTypes.func,
+  data: PropTypes.object
 }
 
 BodyItem.defaultProps = {
-  onClickItem: () => {}
+  onClickItem: () => {},
+  data: {}
 }
 
 function BodyItem (props) {
@@ -23,18 +25,13 @@ function BodyItem (props) {
         props.onClickItem()
       }}
     >
-      <div className='row_id'>1</div>
-
       <div className='row_inf '>
         <img className='image' src={image}></img>
 
         <div className='row_inf_content'>
-          <div className='address'>
-            Địa chỉ: Số 12, ngõ 12, Lê Thanh Nghị, Bách Khoa, Hai Bà Trưng, Hà
-            Nội
-          </div>
-          <div className='area'>Diện tích: 25m2</div>
-          <div className='cost'>Giá: 2.5000.000 / tháng</div>
+          <div className='address'>{props.data?.address}</div>
+          <div className='area'>Diện tích: {props.data?.area}</div>
+          <div className='cost'>Giá: {props.data?.price}/ tháng</div>
           <div className='user'>Đăng bởi: Hoang Thi Thu Huong</div>
         </div>
       </div>

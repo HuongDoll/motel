@@ -14,28 +14,30 @@ import PropTypes from 'prop-types'
 import './RoomDetail.scss'
 
 RoomDetail.propTypes = {
-  onClickBack: PropTypes.func
+  onClickBack: PropTypes.func,
+  data: PropTypes.object
 }
 
 RoomDetail.defaultProps = {
-  onClickBack: () => {}
+  onClickBack: () => {},
+  data: {}
 }
 const data = [
   {
     title: 'Địa chỉ',
-    content: ' Số 12, ngõ 12, Lê Thanh Nghị, Bách Khoa, Hai Bà Trưng, Hà Nội',
+    content: '',
     avt:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpQ5YenVypFBtbZCXd2pW5euFnknS_sBc_qh-0b-02HPC6XX2rOS5c0k_0MkCdY_LGNs&usqp=CAU'
   },
   {
     title: 'Diện tích',
-    content: ' 25m2',
+    content: ' m2',
     avt:
       'https://cdn3.iconfinder.com/data/icons/real-estate-flat-icons-vol-2/256/68-512.png'
   },
   {
     title: 'Giá',
-    content: ' 2.500.000 VND',
+    content: '  VND',
     avt:
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFO-CSGZKlqR5nGD1wTguWPd0r0roaRt5Pr4ONom-UBJlvvJdq1a9VQC_JR-H_f_On8uY&usqp=CAU'
   },
@@ -47,6 +49,60 @@ const data = [
 ]
 
 function RoomDetail (props) {
+  const [dataRoom, setDataRoom] = useState([
+    {
+      title: 'Địa chỉ',
+      content: '',
+      avt:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpQ5YenVypFBtbZCXd2pW5euFnknS_sBc_qh-0b-02HPC6XX2rOS5c0k_0MkCdY_LGNs&usqp=CAU'
+    },
+    {
+      title: 'Diện tích',
+      content: ' m2',
+      avt:
+        'https://cdn3.iconfinder.com/data/icons/real-estate-flat-icons-vol-2/256/68-512.png'
+    },
+    {
+      title: 'Giá',
+      content: '  VND',
+      avt:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFO-CSGZKlqR5nGD1wTguWPd0r0roaRt5Pr4ONom-UBJlvvJdq1a9VQC_JR-H_f_On8uY&usqp=CAU'
+    },
+    {
+      title: 'Chủ trọ',
+      content: ' hoang thi thu huong',
+      avt: 'https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png'
+    }
+  ])
+
+  useEffect(() => {
+    setDataRoom([
+      {
+        title: 'Địa chỉ',
+        content: props?.data?.address,
+        avt:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzpQ5YenVypFBtbZCXd2pW5euFnknS_sBc_qh-0b-02HPC6XX2rOS5c0k_0MkCdY_LGNs&usqp=CAU'
+      },
+      {
+        title: 'Diện tích',
+        content: props?.data?.area + ' m2',
+        avt:
+          'https://cdn3.iconfinder.com/data/icons/real-estate-flat-icons-vol-2/256/68-512.png'
+      },
+      {
+        title: 'Giá',
+        content: props?.data?.price + ' VND',
+        avt:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFO-CSGZKlqR5nGD1wTguWPd0r0roaRt5Pr4ONom-UBJlvvJdq1a9VQC_JR-H_f_On8uY&usqp=CAU'
+      },
+      {
+        title: 'Chủ trọ',
+        content: ' hoang thi thu huong',
+        avt: 'https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png'
+      }
+    ])
+  }, [props.data])
+
   return (
     <div className='room-detail'>
       <div className='room-detail__lable'>
@@ -117,7 +173,7 @@ function RoomDetail (props) {
         >
           <List
             itemLayout='horizontal'
-            dataSource={data}
+            dataSource={dataRoom}
             size='large'
             renderItem={item => (
               <List.Item>
