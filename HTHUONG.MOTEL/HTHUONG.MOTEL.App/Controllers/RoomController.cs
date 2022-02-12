@@ -138,7 +138,7 @@ namespace HTHUONG.MOTEL.App.Controllers
                     return StatusCode((int)HttpStatusCode.NotFound);
                 }
 
-                if (oldRoom.Status != Enumeration.RoomStatus.Empty)
+                if (oldRoom.Status == Enumeration.RoomStatus.Full)
                 {
                     return BadRequest(new ErrorResult
                     {
