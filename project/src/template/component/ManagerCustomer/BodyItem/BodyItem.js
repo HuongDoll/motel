@@ -11,7 +11,12 @@ function BodyItem () {
       <div className='row_room '>
         Phòng trọ Phòng trọ Phòng trọ Phòng trọ Phòng trọ
       </div>
-      <div className='row_customer '>Hoang Thi Thu Huong </div>
+      <div className='row_customer '>
+        <div>Hoang Thi Thu Huong </div>
+        <div>0973843806 </div>
+      </div>
+
+      <div className='row_time '>2/8/2022 16:45</div>
       <div className='row_action '>
         <Button
           type='primary'

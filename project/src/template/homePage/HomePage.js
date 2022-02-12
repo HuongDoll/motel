@@ -49,10 +49,26 @@ const MENU_INDEX = {
 
 function HomePage () {
   const [index, setIndex] = useState(MENU_INDEX.HOME)
+  const [islogin, setislogin] = useState(false)
+  const [typeUser, setTypeUser] = useState(0)
+  const [openLogin, setOpenLogin] = useState(false)
+
+  useEffect(() => {
+    setislogin(localStorage.getItem('login'))
+    setTypeUser(localStorage.getItem('usertype'))
+  }, [])
+
+  localStorage.getItem('login')
 
   return (
     <div className='motel-homePage'>
-      <Header></Header>
+      <Header
+        onlogin={() => {
+          setislogin(localStorage.getItem('login'))
+          setTypeUser(localStorage.getItem('usertype'))
+        }}
+        openlogin={openLogin}
+      ></Header>
       <div className='motel-homePage__body'>
         <div className='motel-homePage__body_menu'>
           <div
@@ -74,170 +90,183 @@ function HomePage () {
 
             <span>Trang chủ</span>
           </div>
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.MY_ROOM ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.MY_ROOM)
-            }}
-          >
-            <GroupOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.MY_ROOM ? '#2a85da' : '#fff'
-              }}
-            />
+          {typeUser == 0 && (
+            <>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.POST_FAVORITE ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  if (islogin == 1) setIndex(MENU_INDEX.POST_FAVORITE)
+                  else setOpenLogin(!openLogin)
+                }}
+              >
+                <HeartOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color:
+                      index === MENU_INDEX.POST_FAVORITE ? '#2a85da' : '#fff'
+                  }}
+                />
 
-            <span>Phòng của tôi</span>
-          </div>
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.INVOICE ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.INVOICE)
-            }}
-          >
-            <SnippetsOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.INVOICE ? '#2a85da' : '#fff'
-              }}
-            />
+                <span>Yêu thích</span>
+              </div>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.MY_ROOM ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  if (islogin == 1) setIndex(MENU_INDEX.MY_ROOM)
+                  else setOpenLogin(!openLogin)
+                }}
+              >
+                <GroupOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color: index === MENU_INDEX.MY_ROOM ? '#2a85da' : '#fff'
+                  }}
+                />
 
-            <span>Hóa đơn</span>
-          </div>
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.MANAGEMENT_ROOM ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.MANAGEMENT_ROOM)
-            }}
-          >
-            <WalletOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.MANAGEMENT_ROOM ? '#2a85da' : '#fff'
-              }}
-            />
+                <span>Phòng của tôi</span>
+              </div>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.INVOICE ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  if (islogin == 1) setIndex(MENU_INDEX.INVOICE)
+                  else setOpenLogin(!openLogin)
+                }}
+              >
+                <SnippetsOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color: index === MENU_INDEX.INVOICE ? '#2a85da' : '#fff'
+                  }}
+                />
 
-            <span>Quản lý phòng trọ</span>
-          </div>
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.MANAGEMENT_POST ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.MANAGEMENT_POST)
-            }}
-          >
-            <FormOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.MANAGEMENT_POST ? '#2a85da' : '#fff'
-              }}
-            />
+                <span>Hóa đơn</span>
+              </div>
+            </>
+          )}
+          {typeUser == 1 && islogin == 1 && (
+            <>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.MANAGEMENT_ROOM ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  setIndex(MENU_INDEX.MANAGEMENT_ROOM)
+                }}
+              >
+                <WalletOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color:
+                      index === MENU_INDEX.MANAGEMENT_ROOM ? '#2a85da' : '#fff'
+                  }}
+                />
 
-            <span>Quản lý bài đăng</span>
-          </div>
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.CUSTOMER ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.CUSTOMER)
-            }}
-          >
-            <SolutionOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.CUSTOMER ? '#2a85da' : '#fff'
-              }}
-            />
+                <span>Quản lý phòng trọ</span>
+              </div>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.MANAGEMENT_POST ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  setIndex(MENU_INDEX.MANAGEMENT_POST)
+                }}
+              >
+                <FormOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color:
+                      index === MENU_INDEX.MANAGEMENT_POST ? '#2a85da' : '#fff'
+                  }}
+                />
 
-            <span>Nhận/trả khách trọ</span>
-          </div>
+                <span>Quản lý bài đăng</span>
+              </div>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.CUSTOMER ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  setIndex(MENU_INDEX.CUSTOMER)
+                }}
+              >
+                <SolutionOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color: index === MENU_INDEX.CUSTOMER ? '#2a85da' : '#fff'
+                  }}
+                />
 
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.MANAGEMENT_INVOICE ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.MANAGEMENT_INVOICE)
-            }}
-          >
-            <SnippetsOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color:
-                  index === MENU_INDEX.MANAGEMENT_INVOICE ? '#2a85da' : '#fff'
-              }}
-            />
+                <span>Nhận/trả khách trọ</span>
+              </div>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.MANAGEMENT_INVOICE ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  setIndex(MENU_INDEX.MANAGEMENT_INVOICE)
+                }}
+              >
+                <SnippetsOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color:
+                      index === MENU_INDEX.MANAGEMENT_INVOICE
+                        ? '#2a85da'
+                        : '#fff'
+                  }}
+                />
 
-            <span>Quản lý hóa đơn</span>
-          </div>
+                <span>Quản lý hóa đơn</span>
+              </div>
+              <div
+                className={
+                  'motel-homePage__body_menu_item ' +
+                  (index === MENU_INDEX.REVENUE ? 'select-menu' : '')
+                }
+                onClick={() => {
+                  setIndex(MENU_INDEX.REVENUE)
+                }}
+              >
+                <AreaChartOutlined
+                  style={{
+                    fontSize: '24px',
+                    marginRight: '12px',
+                    color: index === MENU_INDEX.REVENUE ? '#2a85da' : '#fff'
+                  }}
+                />
 
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.REVENUE ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.REVENUE)
-            }}
-          >
-            <AreaChartOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.REVENUE ? '#2a85da' : '#fff'
-              }}
-            />
-
-            <span>Thống kê doanh thu</span>
-          </div>
-
-          <div
-            className={
-              'motel-homePage__body_menu_item ' +
-              (index === MENU_INDEX.POST_FAVORITE ? 'select-menu' : '')
-            }
-            onClick={() => {
-              setIndex(MENU_INDEX.POST_FAVORITE)
-            }}
-          >
-            <HeartOutlined
-              style={{
-                fontSize: '24px',
-                marginRight: '12px',
-                color: index === MENU_INDEX.POST_FAVORITE ? '#2a85da' : '#fff'
-              }}
-            />
-
-            <span>Yêu thích</span>
-          </div>
-
+                <span>Thống kê doanh thu</span>
+              </div>
+            </>
+          )}
           <div
             className={
               'motel-homePage__body_menu_item ' +
               (index === MENU_INDEX.ACOUNT ? 'select-menu' : '')
             }
             onClick={() => {
-              setIndex(MENU_INDEX.ACOUNT)
+              if (islogin == 1) setIndex(MENU_INDEX.ACOUNT)
+              else setOpenLogin(!openLogin)
             }}
           >
             <UserOutlined

@@ -13,11 +13,17 @@
   }
 
   .row_inf {
-    width: 60%;
+    width: 40%;
     display: flex;
     padding-right: 24px;
 
   }
+
+  .row_host {
+    width: 20%;
+    min-width: 200px;
+  }
+
 
   .row_status {
     width: 20%;

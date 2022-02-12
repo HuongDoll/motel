@@ -13,7 +13,13 @@
         align-items: center;
         padding: 12px;
         margin-bottom: 4px;
+        justify-content: space-between;
 
+        .filter{
+            display: flex;
+            align-items: center;
+
+        }
     }
 
     &__content{
@@ -41,8 +47,12 @@
             }
 
             .row_room {
-                width: 50%;
+                width: 40%;
             }
+            .row_time {
+                width: 20%;
+            }
+
 
             .row_customer {
                 width: 30%;

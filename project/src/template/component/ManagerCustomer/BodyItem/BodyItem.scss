@@ -13,16 +13,20 @@
   }
 
     .row_room {
-        width: 50%;
+      width: 40%;
+    }
+    .row_time {
+      width: 20%;
     }
 
     .row_customer {
-        width: 30%;
-        min-width: 250px;
+      width: 30%;
+      min-width: 250px;
     }
 
     .row_action {
-        width: 20%;
-        min-width: 200px;
+      width: 20%;
+      min-width: 200px;
     }
+
 }

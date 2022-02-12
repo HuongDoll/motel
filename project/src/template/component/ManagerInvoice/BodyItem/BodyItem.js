@@ -8,9 +8,12 @@ function BodyItem () {
   return (
     <div className='motel-post-body-item row '>
       <div className='row_room '>
-        Số 12, ngõ 12, Lê Thanh Nghị, Bách Khoa, Hai Bà Trưng, Hà Nội
+        <b>Số 12, ngõ 12, Lê Thanh Nghị, Bách Khoa, Hai Bà Trưng, Hà Nội</b>
       </div>
-      <div className='row_user '>Hoang Thi Thu Huong</div>
+      <div className='row_user '>
+        <div>Hoang Thi Thu Huong</div>
+        <div>0973843806</div>
+      </div>
       <div className='row_cost '>5.000.000</div>
       <div className='row_status '>Chưa thanh toán</div>
       <div className='row_action '>

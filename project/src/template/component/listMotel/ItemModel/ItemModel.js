@@ -5,11 +5,13 @@ import PropTypes from 'prop-types'
 import './ItemModel.scss'
 
 ItemModel.propTypes = {
-  onClickItem: PropTypes.func
+  onClickItem: PropTypes.func,
+  data: PropTypes.object
 }
 
 ItemModel.defaultProps = {
-  onClickItem: () => {}
+  onClickItem: () => {},
+  data: {}
 }
 
 function ItemModel (props) {
@@ -21,7 +23,7 @@ function ItemModel (props) {
       }}
     >
       <div className='motel-login__left'>
-        <div className='time'>19:15:60 30/12/2021</div>
+        <div className='time'>30/12/2021 19:15 </div>
         <img className='image' src={image}></img>
       </div>
       <div className='motel-login__right'>

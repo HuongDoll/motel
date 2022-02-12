@@ -29,6 +29,8 @@ function Invoice () {
         <div className='motel-invoice__content_table'>
           <div className='row header'>
             <div className='row_inf header'>Phòng trọ</div>
+            <div className='row_host header'>Chủ trọ</div>
+
             <div className='row_cost header'>Giá tiền</div>
             <div className='row_status header'>Trạng thái</div>
           </div>
