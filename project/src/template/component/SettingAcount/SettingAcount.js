@@ -1,60 +1,60 @@
-import React, { useState, useEffect } from 'react'
-import { Menu, Dropdown, message, Input, EyeTwoTone } from 'antd'
-import { Tabs, Radio, Button } from 'antd'
-import { SettingOutlined, LogoutOutlined } from '@ant-design/icons'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import { Menu, Dropdown, message, Input, EyeTwoTone } from 'antd';
+import { Tabs, Radio, Button } from 'antd';
+import { SettingOutlined, LogoutOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
-import './SettingAcount.scss'
+import './SettingAcount.scss';
 
-SettingAcount.propTypes = {}
+SettingAcount.propTypes = {};
 
-SettingAcount.defaultProps = {}
+SettingAcount.defaultProps = {};
 
-function SettingAcount (props) {
-  const { TabPane } = Tabs
-  const [user, setUser] = useState({})
-  const [userClone, setUserClone] = useState({})
-  const [password, setPassword] = useState('')
-  const [newPassword, setNewPassword] = useState('')
-  const [newPasswordCf, setNewPasswordCf] = useState('')
+function SettingAcount(props) {
+  const { TabPane } = Tabs;
+  const [user, setUser] = useState({});
+  const [userClone, setUserClone] = useState({});
+  const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [newPasswordCf, setNewPasswordCf] = useState('');
 
   useEffect(() => {
-    getdata()
-  }, [])
+    getdata();
+  }, []);
 
-  function callback (key) {
-    console.log(key)
+  function callback(key) {
+    console.log(key);
   }
 
   /**
    * lay thong tin ca nhan
    */
   const getdata = function () {
-    var userId = localStorage.getItem('userID')
-    var access_token = localStorage.getItem('access')
+    var userId = localStorage.getItem('userID');
+    var access_token = localStorage.getItem('access');
 
     axios
       .get(`https://localhost:44342/api/users/` + userId, {
         headers: {
-          Authorization: `token ${access_token}`
-        }
+          Authorization: `token ${access_token}`,
+        },
       })
-      .then(res => {
-        console.log(res?.data)
-        setUser(res?.data)
-        setUserClone(res?.data)
+      .then((res) => {
+        console.log(res?.data);
+        setUser(res?.data);
+        setUserClone(res?.data);
 
-        console.log(user)
+        console.log(user);
       })
-      .catch(error => console.log(error))
-  }
+      .catch((error) => console.log(error));
+  };
 
   /**
    * sua thong tin ca nhan
    */
   const updateUser = function () {
-    var userId = localStorage.getItem('userID')
-    var access_token = localStorage.getItem('access')
+    var userId = localStorage.getItem('userID');
+    var access_token = localStorage.getItem('access');
 
     axios
       .put(
@@ -63,28 +63,28 @@ function SettingAcount (props) {
           FullName: user.fullName,
           Phone: user.phone,
           Email: user.email,
-          UserName: user.userName
+          UserName: user.userName,
         },
         {
           headers: {
-            Authorization: `token ${access_token}`
-          }
+            Authorization: `token ${access_token}`,
+          },
         }
       )
-      .then(res => {
-        console.log(res)
-        getdata()
+      .then((res) => {
+        console.log(res);
+        getdata();
       })
-      .catch(error => console.log(error))
-  }
+      .catch((error) => console.log(error));
+  };
 
   /**
    * thay doi mat khau
    */
   const updatePassword = function () {
     if (newPassword === newPasswordCf && newPassword !== '') {
-      var userId = localStorage.getItem('userID')
-      var access_token = localStorage.getItem('access')
+      var userId = localStorage.getItem('userID');
+      var access_token = localStorage.getItem('access');
 
       axios
         .put(
@@ -93,20 +93,20 @@ function SettingAcount (props) {
             '?isChangePassword=true',
           {
             Password: password,
-            NewPassword: newPassword
+            NewPassword: newPassword,
           },
           {
             headers: {
-              Authorization: `token ${access_token}`
-            }
+              Authorization: `token ${access_token}`,
+            },
           }
         )
-        .then(res => {
-          console.log(res)
+        .then((res) => {
+          console.log(res);
         })
-        .catch(error => console.log(error))
+        .catch((error) => console.log(error));
     }
-  }
+  };
 
   return (
     <div className='setting-acount'>
@@ -122,8 +122,8 @@ function SettingAcount (props) {
                 style={{ marginBottom: '16px' }}
                 required
                 value={user?.fullName}
-                onChange={value => {
-                  setUser({ ...user, fullName: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, fullName: value.target.value });
                 }}
               />
               <p>Số điện thoại (*)</p>
@@ -132,8 +132,8 @@ function SettingAcount (props) {
                 style={{ marginBottom: '16px' }}
                 required
                 value={user.phone}
-                onChange={value => {
-                  setUser({ ...user, phone: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, phone: value.target.value });
                 }}
               />
               <p>Email</p>
@@ -142,8 +142,8 @@ function SettingAcount (props) {
                 style={{ marginBottom: '16px' }}
                 required
                 value={user.email}
-                onChange={value => {
-                  setUser({ ...user, email: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, email: value.target.value });
                 }}
               />
 
@@ -153,8 +153,8 @@ function SettingAcount (props) {
                 style={{ marginBottom: '16px' }}
                 required
                 value={user.userName}
-                onChange={value => {
-                  setUser({ ...user, userName: value.target.value })
+                onChange={(value) => {
+                  setUser({ ...user, userName: value.target.value });
                 }}
               />
 
@@ -174,7 +174,7 @@ function SettingAcount (props) {
               <Button
                 type='primary'
                 onClick={() => {
-                  updateUser()
+                  updateUser();
                 }}
               >
                 Cập nhật
@@ -190,8 +190,8 @@ function SettingAcount (props) {
                 placeholder='Mật khẩu'
                 style={{ marginBottom: '16px' }}
                 defaultValue={''}
-                onChange={value => {
-                  setPassword(value.target.value)
+                onChange={(value) => {
+                  setPassword(value.target.value);
                 }}
               />
               <p>Mật khẩu mới (*)</p>
@@ -199,8 +199,8 @@ function SettingAcount (props) {
                 placeholder='Mật khẩu'
                 style={{ marginBottom: '16px' }}
                 defaultValue={''}
-                onChange={value => {
-                  setNewPassword(value.target.value)
+                onChange={(value) => {
+                  setNewPassword(value.target.value);
                 }}
               />
               <p>Xác nhận mật khẩu mới (*)</p>
@@ -208,8 +208,8 @@ function SettingAcount (props) {
                 placeholder='Mật khẩu'
                 style={{ marginBottom: '48px' }}
                 defaultValue={''}
-                onChange={value => {
-                  setNewPasswordCf(value.target.value)
+                onChange={(value) => {
+                  setNewPasswordCf(value.target.value);
                 }}
               />
               <Button onClick={() => {}} style={{ marginRight: '8px' }}>
@@ -218,7 +218,7 @@ function SettingAcount (props) {
               <Button
                 type='primary'
                 onClick={() => {
-                  updatePassword()
+                  updatePassword();
                 }}
               >
                 Cập nhật
@@ -228,7 +228,7 @@ function SettingAcount (props) {
         </TabPane>
       </Tabs>
     </div>
-  )
+  );
 }
 
-export default SettingAcount
+export default SettingAcount;

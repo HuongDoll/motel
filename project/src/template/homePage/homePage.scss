@@ -1,85 +1,82 @@
-.motel-homePage{
+.motel-homePage {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 70%;
+  font-family: Arial, Verdana, sans-serif;
+
+  &__body {
     width: 100%;
-    height: 100Vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 70%;
-    font-family: Arial, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    &_menu {
+      height: 100%;
+      width: 250px;
+      background-color: rgb(42, 133, 218);
+      // padding: 4px;
+      //   padding-left: 12px;
 
-
-    &__body{
-        width: 100%;
-        height: calc(100vh - 70px);
+      &_item {
+        background-color: rgb(42, 133, 218);
+        // border-radius: 5px;
+        padding: 20px 12px 20px 16px;
         display: flex;
-        &_menu{
-            height: 100%;
-            width: 250px;
-            background-color: rgb(42, 133, 218);
-            // padding: 4px;
-            padding-left: 12px;
+        align-items: center;
+        // margin-bottom: 1px;
+        cursor: pointer;
+        border-top-left-radius: 36px;
+        border-bottom-left-radius: 36px;
 
-            &_item{
-                background-color: rgb(42, 133, 218);
-                // border-radius: 5px;
-                padding: 20px 12px 20px 16px;
-                display: flex;
-                align-items: center;
-                // margin-bottom: 1px;
-                cursor: pointer;
-                border-top-left-radius: 36px;
-                border-bottom-left-radius: 36px;
+        &:hover {
+          background-color: #fff;
+          span {
+            color: rgb(42, 133, 218);
+          }
 
-                &:hover{
-                    background-color: #fff;
-                    span {
-                        color: rgb(42, 133, 218);
-                    }
-                    
-                    .anticon{
-                        color: rgb(42, 133, 218) !important;
-
-                    }
-                }
-
-                img{
-                    width: 24px;
-                    height: 24px;
-                    margin-right: 12px;
-                }
-
-                span{
-                    font-size: 18px;
-                    font-weight: 500;
-                    line-height: 24px;
-                    color: #fff;
-                }
-            }
-
-            .select-menu{
-                background-color: #fff;
-                
-
-                span {
-                    font-size: 18px;
-                    font-weight: 500;
-                    line-height: 24px;
-                    color: rgb(42, 133, 218);
-
-                    }
-
-            }
+          .anticon {
+            color: rgb(42, 133, 218) !important;
+          }
         }
 
-        &_content{
-            height: 100%;
-            width: calc(100% - 250px);
-            padding: 0 24px;
+        img {
+          width: 24px;
+          height: 24px;
+          margin-right: 12px;
         }
+
+        span {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+          color: #fff;
+        }
+      }
+
+      .select-menu {
+        background-color: #fff;
+
+        span {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 24px;
+          color: rgb(42, 133, 218);
+        }
+      }
     }
+
+    &_content {
+      height: 100vh;
+      width: calc(100% - 250px);
+      padding: 0 24px;
+      overflow: auto;
+    }
+  }
 }
-body{
-    margin: 0px;
+body {
+  margin: 0px;
 }
 
 /* width */
