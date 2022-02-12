@@ -47,9 +47,11 @@ namespace HTHUONG.MOTEL.Core.Constants
 
         public enum RoomStatus
         {
-            Empty = 0,
-            Process = 1,
-            Full = 2
+            Empty = 0, // Mới tạo
+            Process = 1, // CÓ Yêu Cầu
+            Full = 2, // Đã cho thuê
+            Save = 3, // Đã có bài đăng,
+            Publish = 4 // Đã đăng bài
         }
 
         public enum BillStatus
